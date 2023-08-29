@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ProduitService } from '../services/produit.service';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
@@ -29,20 +29,38 @@ export class AjoutProduitComponent implements OnInit{
      private _dialogRef: MatDialogRef<AjoutProduitComponent>, 
     @Inject(MAT_DIALOG_DATA) public data: any){
     this.empForm = this._fb.group({
-      designation: '',
-      prix: '',
-      quantite: '',
-      categorie: '',
-      date: '',
-      description: '',
-      photo: ''
+      designation: 'ordinateur',
+      prix: 'ordinateur',
+      quantite: '2',
+      categorie: 'Electronique',
+      date: '2023-08-23',
+      description: 'ordinateur très bon',
+      photo: new FormControl(""),
+      photoName: ""
     })
   }
 
   ngOnInit(): void {
     this.empForm.patchValue(this.data);
   }
-  
+  onFileChange(event:any) {
+    const reader = new FileReader();
+    
+    if(event.target.files && event.target.files.length) {
+      const [file] = event.target.files;
+      console.log(file);
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+   
+        //   reader.result as string;
+     
+         this.empForm.patchValue({
+          photoName: file.name// reader.result?.toString()
+         });
+   
+      };
+    }
+}
   onFormSubmit(){
     if(this.empForm.valid){
       if (this.data) {

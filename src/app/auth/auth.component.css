@@ -1,0 +1,42 @@
+
+.container{
+    height: 80vh;
+}
+  .modal-custom .body{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .modal-custom .modal-container{
+    background: #fff;
+      width: 100%;
+      margin: auto;
+      margin-top: 80px;
+      padding: 20px;
+  }
+  
+  .modal-custom .modal-container img{
+    height: 250px;
+  }
+  .modal-custom .modal-custom-header .btn{
+    font-size: 25px;
+    padding: 5px;
+  }
+  .modal-custom .checkbox-container {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+  }
+  .modal-custom .checkbox-container input{
+    border-radius: 50%;
+    border: 1px;
+    margin: 5px;
+  }
+  .modal-custom .checkbox-container label{
+    font-size: 10px;
+  }
+
+p a{
+    color: #20C997;
+    text-decoration: none;
+  }

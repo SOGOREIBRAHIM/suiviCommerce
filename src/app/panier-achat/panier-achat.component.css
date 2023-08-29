@@ -1,0 +1,67 @@
+
+.title{
+  display: flex;
+  justify-content: space-between;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.modal-custom{
+  position: fixed;
+  z-index: 10;
+  background: rgba(0,0,0,0.4);
+  top: 0;
+  height: 100vh;
+  right: 0;
+  left: 0;
+}
+.modal-custom .body{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.modal-custom .modal-container{
+  background: #fff;
+    width: 80%;
+    margin: auto;
+    margin-top: 80px;
+    padding: 20px;
+}
+
+.modal-custom .modal-container img{
+  height: 250px;
+}
+.modal-custom .modal-custom-header .btn{
+  font-size: 25px;
+  padding: 5px;
+}
+.modal-custom .checkbox-container {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+.modal-custom .checkbox-container input{
+  border-radius: 50%;
+  border: 1px;
+  margin: 5px;
+}
+.modal-custom .checkbox-container label{
+  font-size: 10px;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+  width: 20%;
+  background-color: #DDD;
+  border: none;
+  text-align: center;
+}
+td.qty i{
+    cursor: pointer;
+    border: 1px solid #2351F8;
+    margin: 2px;
+    color: #2351F8;
+    font-weight: bold;
+}

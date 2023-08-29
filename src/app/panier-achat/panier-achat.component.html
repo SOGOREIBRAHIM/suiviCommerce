@@ -1,0 +1,68 @@
+<div class="container">
+	<div class="modal-custom" *ngIf="showModal">
+	<div class="modal-container">
+		<div class="modal-custom-header">
+			<h3 class="title"><span>Confirmation de l'achat &nbsp;<i class="fa-solid fa-cart-plus"></i></span><a class="btn" (click)="showModal = false"><i class="fa-regular fa-rectangle-xmark"></i></a></h3>
+		</div>
+		<div class="body">
+			<div class="editable">
+				<div class="mb-3">
+					<label for="exampleFormControlInput1" class="form-label">Nom</label>
+					<input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+				  </div>
+				  <div class="mb-3">
+					<label for="exampleFormControlInput1" class="form-label">Contact</label>
+					<input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+				  </div>
+				  <div class="mb-3">
+					<label for="exampleFormControlInput1" class="form-label">Lieu de la livraison</label>
+					<input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+				  </div>
+				  <div class="checkbox-container">
+					<input type="checkbox" id="p1"><label for="p1">Payement à la livraison</label>
+					<input type="checkbox" id="p2"><label for="p2">Orange Money</label>
+				  </div>
+				  <div class="">
+					<button class="btn btn-default">Envoyer</button>
+				  </div>
+			</div>
+			<div class="illustration-container">
+					<img src="../../assets/img/illustrations/shop.jpg" alt="">
+			</div>
+		</div>
+		</div>
+	</div>
+</div>
+<div class="container m-t vh-100">
+    <h3 class="title"><span>Panier &nbsp;<i class="fa-solid fa-cart-plus"></i></span><a class="btn btn-primary" (click)="showModal = true">Valider achat</a></h3>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th scope="col">#</th>
+			<th scope="col">Désignation</th>
+			<th scope="col">Catégories</th>
+			<th scope="col">Prix</th>
+            <th scope="col">Quantité</th>
+            <th scope="col">Annuler</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let produit of panierList; index as i">
+			<th scope="row">{{ i + 1 }}</th>
+			<td>
+				<img
+					src="../assets/img/produit/img_{{i+1}}.jpg"
+					class="me-2"
+					style="height: 20px"
+				/>
+				{{ produit.nom }}
+			</td>
+			<td>Chaussure</td>
+            <td>{{ produit.prix | number }}</td>
+            <td class="qty"><i (click)="decreQtyByIndex(i)" class="fa-solid fa-minus"></i><input type="number" value="{{getQuantity(i)}}">
+                            <i (click)="increQtyByIndex(i)" class="fa-solid fa-plus"></i></td>
+			<td><a (click)="removeOnPanier($event,i)" class="text-danger"><i class="fa-solid fa-trash-can"></i></a></td>
+		</tr>
+	</tbody>
+</table>
+</div>
