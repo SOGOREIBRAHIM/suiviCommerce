@@ -1,0 +1,53 @@
+<div class="accueil">
+    <div class="carousel-container">
+        <igx-carousel #carousel [interval]="5000" [loop]="true" >
+            <igx-slide *ngFor="let slide of slides;">
+                <div class="image-container">
+                    <img [src]="slide.src">
+                </div>
+            </igx-slide>
+        </igx-carousel>
+    </div>
+
+     <div class="title">
+        <h3> <span classe="nos">Nos</span> articles</h3>
+     </div>
+     
+    <div class="conainer">
+        <div class="row">
+            <div class="col-md-2" id="largeur" *ngFor="let produit of produits">
+                <igx-card class="card">
+                    <igx-card-media height="100%"> 
+                        <img src= "../assets/img/2.jpeg" (click)="ouvrirDetail()">
+                    </igx-card-media>
+                    <igx-card-header class="card-header">
+                        <h3 igxCardHeaderTitle>{{produit.designation}}</h3>
+                        <h2 igxCardHeaderSubtitle>{{produit.prix}} f</h2>
+                    </igx-card-header>
+                    <igx-card-content class="card-content">
+                        <p>{{produit.description}}
+                        </p>
+                    </igx-card-content>
+                    <igx-card-actions>
+                        <button mat-icon-button class="card-icon" aria-label="Example icon-button with share icon">
+                            <mat-icon>shopping_cart</mat-icon>
+                        </button> 
+                        <button mat-icon-button class="card-icon" aria-label="Example icon-button with share icon" igxEnd>
+                            <mat-icon>favorite</mat-icon>
+                        </button>
+                        <button mat-icon-button class="card-icon" aria-label="Example icon-button with share icon">
+                            <mat-icon>shopping_basket</mat-icon>
+                        </button>
+                    </igx-card-actions>
+                </igx-card>
+            </div>   
+        </div>
+    </div>
+
+  
+
+</div>
+
+
+      
+

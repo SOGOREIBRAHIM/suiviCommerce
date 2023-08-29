@@ -1,0 +1,19 @@
+
+.row{
+    padding: 3% 8%;
+}
+
+.row{
+    transition: transform .2s;
+}
+
+.img{
+    width: 100%;
+    border-radius: 2%;
+}
+
+.text{
+    font-size: 20px;
+}
+
+

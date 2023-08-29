@@ -1,0 +1,30 @@
+
+.content{
+    padding-top: 10px;
+}
+
+.row{
+    display: flex;
+    gap: 10px;
+
+}
+
+.largeur{
+    width: 100%;
+}
+
+.action{
+    padding: 0 25px 20px;
+
+}
+
+button{
+    flex: 1;
+}
+
+table {
+    width: 100%;
+    padding-top: 1000px;
+  }
+
+

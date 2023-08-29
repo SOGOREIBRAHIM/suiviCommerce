@@ -1,0 +1,103 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "produit": [
+    {
+      "designation": "Ordination",
+      "prix": 2000000,
+      "quantite": 1,
+      "categorie": "Informatique",
+      "date": "2023-08-29T00:00:00.000Z",
+      "description": "Elite Book 7 eme generation",
+      "id": 1
+    },
+    {
+      "designation": "Armoir",
+      "prix": 120000,
+      "quantite": 2,
+      "categorie": "Bureau",
+      "date": "2023-08-29T00:00:00.000Z",
+      "description": "Amoir trois portiers",
+      "id": 2
+    },
+    {
+      "designation": "Veste",
+      "prix": 46000,
+      "quantite": 3,
+      "categorie": "Homme",
+      "date": "2023-08-29T00:00:00.000Z",
+      "description": "Vetement pour homme",
+      "id": 3
+    },
+    {
+      "designation": "Moto Electrique",
+      "prix": 300000,
+      "quantite": 2,
+      "categorie": "Electronique",
+      "date": "2023-08-29T00:00:00.000Z",
+      "description": "Sans carburant, parcourer la ville",
+      "id": 4
+    },
+    {
+      "designation": "Clavier Transparence",
+      "prix": 200000,
+      "quantite": 45,
+      "categorie": "Informatique",
+      "date": "2023-08-29T00:00:00.000Z",
+      "description": "Clavier de nouvel generation",
+      "id": 5
+    },
+    {
+      "designation": "Telephone",
+      "prix": 658900,
+      "quantite": 76,
+      "categorie": "Electronique",
+      "date": "2023-08-29T00:00:00.000Z",
+      "description": "Samsung 32Go de memoire",
+      "id": 6
+    },
+    {
+      "designation": "Blouson",
+      "prix": 345550,
+      "quantite": 23,
+      "categorie": "Enfant",
+      "date": "2023-08-29T00:00:00.000Z",
+      "description": "Blouson pour enfant",
+      "id": 7
+    },
+    {
+      "designation": "Talon ",
+      "prix": 45000,
+      "quantite": 45,
+      "categorie": "Femme",
+      "date": "2023-08-29T00:00:00.000Z",
+      "description": "Dame swagg",
+      "id": 8
+    },
+    {
+      "designation": "PC",
+      "prix": 29000,
+      "quantite": 2,
+      "categorie": "Informatique",
+      "date": "2023-08-29T00:00:00.000Z",
+      "description": "Elite book 830",
+      "photo": "",
+      "id": 9
+    }
+  ]
+}

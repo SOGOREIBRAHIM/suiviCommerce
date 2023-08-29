@@ -1,0 +1,139 @@
+
+/* header */
+.space {
+    flex: 1 1 auto;
+  }
+
+  .navbar{
+    padding: 0 10%;
+  } 
+
+  .navbar-icon{
+    color: #FFF;
+    padding-top: 3px;
+  }
+
+  .logo-s{
+    font-size: 60px;
+    color: #FD384F;
+    font-family: 'Island Moments', cursive;
+    margin-bottom: 10px;
+    margin-right: 2px;
+  }
+
+  .logo-h{
+    color: #FD384F;
+    font-weight: 100px;
+    margin-right: 2px;
+    font-weight: 700;
+}
+
+.logo-pping{
+    color: #FD384F;
+    font-weight: 100px;
+    margin-right: 25px;
+    font-weight: 700;
+}
+
+.menu-btn:hover
+.menu-btn:focus{
+  background: #3f51b5;
+  color: #FFF;
+}
+
+/* footer */
+footer{
+  background: #000;
+  height: 50%;
+  padding-top: 3%;
+}
+
+.row{
+    display: flex;
+    justify-content: center;
+    margin: 2% 10%;
+}
+
+h4{
+  color: #FFF;
+  margin-bottom: 5%;
+}
+
+.numero{
+  color: #FFF;
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 5%;
+}
+
+.email{
+  color: #FFF;
+  display: flex;
+  flex-direction: row;
+  /* padding: 5% 30%; */
+}
+
+.numero a i{
+  color: #FFF;
+  font-size: 150%;
+  /* padding: 5% 30%; */
+}
+
+
+.email a i{
+  color: #FFF;
+  font-size: 150%;
+  /* padding: 5% 10%; */
+}
+
+
+.numero .text{
+  padding-left: 10px;
+  font-size: 120%;
+}
+
+.email .text{
+  padding-left: 10px;
+  font-size: 120%;
+}
+
+.contact-icon{
+  /* font-size: 200%; */
+}
+
+.social-icon{
+  padding-top: 10%;
+  display: flex;
+  flex-direction: row;
+  /* size: 40%; */
+}
+
+.social-icon a{
+  padding-left: 5%;
+}
+
+#footer-icon{
+  color: #FFF;
+  font-size: 250%;
+  transition: all 1s ease-out;
+}
+
+#footer-icon:hover
+#footer-icon:focus{
+  color: #FD384F
+}
+
+.text{
+  color: #FFF;
+  font-size: 120%;
+}
+
+#input{
+  margin-bottom: 5%;
+}
+
+#btn-envoi{
+  color: #FD384F;
+}
+
+

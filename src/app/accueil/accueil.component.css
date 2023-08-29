@@ -1,0 +1,111 @@
+
+.img-home{
+    margin-left: 200px;
+    margin-top: -60px;
+  }
+
+  .card-wrapper {
+    max-width: 320px;
+    min-width: 220px;
+}
+
+.carousel-container {
+  width: 90%;
+  height: 80vh;
+  margin: 16px auto;
+}
+
+:host ::ng-deep{
+  .image-container {
+      max-width: 85%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .igx-carousel {
+      max-width: 100%;
+      width: unset;
+  }
+
+  .igx-nav-dot {
+      background: black;
+      box-shadow: none;
+      width: 15px;
+      height: 15px;
+  }
+
+  .igx-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 100%;
+      width: unset;
+  }
+
+  .igx-slide img {
+      object-fit: fill;
+      max-width: 90%;
+  }
+}
+
+.title{
+  display: flex;
+  justify-content: center;
+
+}
+
+.title span{
+  color: #FD384F;
+  width: max-content;
+}
+
+.conainer{
+
+}
+
+.row{
+  display: flex;
+  justify-content: center;
+  margin: 2% 10%;
+}
+
+#largeur{
+  width: 25%;
+  height: 10%;
+  margin-top: 5%;
+  
+}
+
+.card{
+  background: #011627;
+  transition: transform .2s;
+ }
+
+.card:hover
+.card:focus{
+  transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.card-header{
+  background: #011627;
+
+}
+
+.card-header h3{
+  color:#fff ;
+}
+
+.card-header h2{
+  color:#ECAA53 ;
+}
+
+.card-content{
+  background: #011627;
+  color:#fff ;
+}
+
+.card-icon{
+  color: #ECAA53;
+}
+

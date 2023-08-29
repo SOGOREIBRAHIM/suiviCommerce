@@ -1,0 +1,67 @@
+
+<div mat-dialog-title>
+    <h4>Ajout de produits</h4>
+</div>
+<form [formGroup]="empForm" (ngSubmit)="onFormSubmit()">
+<div mat-dialog-content class="content">
+    <div class="row">
+          <mat-form-field appearance="outline" class="largeur">
+            <mat-label>Designation</mat-label>
+            <input matInput type="text" placeholder="Ex. Ordinateur" formControlName="designation" required>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="largeur">
+            <mat-label>Quantite</mat-label>
+            <input matInput type="number" placeholder="1 ..." formControlName="quantite" required>
+          </mat-form-field>
+
+    </div>
+    <div class="row">
+          <mat-form-field floatLabel="always" class="largeur">
+            <input matInput type="number" class="example-right-align" placeholder="20.000" formControlName="prix" required>
+            <!-- <span matTextPrefix>fcfa&nbsp;</span> -->
+            <span matTextSuffix>f</span>
+          </mat-form-field>
+
+          <mat-form-field class="largeur">
+            <mat-label>Date</mat-label>
+            <input  matInput [matDatepicker]="picker" formControlName="date" required>
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+    </div>
+    <div class="row">
+          <mat-form-field class="largeur" appearance="outline">
+            <mat-label>Categorie</mat-label>
+            <mat-select formControlName="categorie" required>
+              <mat-option *ngFor="let val of categorie" [value]="val">
+                {{val}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="largeur">
+            <mat-label>Description</mat-label>
+            <input matInput type="text" placeholder="Ex. description" formControlName="description" required>
+          </mat-form-field>
+
+    </div>
+
+    
+    <h6>Photo</h6>
+    <igx-input-group>
+        <label igxLabel>Important Documents</label>
+        <input
+            igxInput
+            type="file"
+            multiple
+        />
+        <igx-hint>Upload a file to begin...</igx-hint>
+    </igx-input-group>
+</div>
+<div mat-dialog-actions class="action">
+    <button mat-raised-button type="button" [mat-dialog-close]="false" color="warn">Annuler</button>
+    <button mat-raised-button color="primary" type="submit">{{ data ? 'Modifier': 'Enregistrer' }}</button>
+</div>
+</form>
