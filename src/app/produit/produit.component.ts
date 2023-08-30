@@ -12,6 +12,7 @@ import { ProduitService } from '../services/produit.service';
 })
 export class ProduitComponent implements OnInit{
   title = 'suiviCommande';
+  displayedColumnsCmd: string[] = ['id','client', 'categorie', 'designation', 'prix', 'quantite', 'status','date', 'description','action','photo'];
   displayedColumns: string[] = ['id', 'designation', 'prix', 'quantite', 'categorie', 'date', 'description','action','photo'];
   dataSource = new MatTableDataSource<any>
 

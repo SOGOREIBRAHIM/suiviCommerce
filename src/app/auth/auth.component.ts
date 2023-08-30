@@ -12,8 +12,8 @@ export class AuthComponent {
   register:boolean = false;
   serviceAuth:AuthService;
   authLogin = new FormGroup({
-    email: new FormControl('', [Validators.required]),
-    password: new FormControl('',[Validators.email]) 
+    email: new FormControl('', [Validators.required,Validators.email]),
+    password: new FormControl('',[Validators.required]) 
   });
   authRegister = new FormGroup({
     email: new FormControl('', [Validators.required]),
@@ -24,7 +24,7 @@ export class AuthComponent {
       this.serviceAuth = serviceAuth;
   }
 
-  login(){
+  login():any{
     //id:number,nom:string,prenom:string,email:string,password:string)
     this.user =
      this.serviceAuth.getLogin(new Client(
@@ -32,16 +32,19 @@ export class AuthComponent {
       "", //nom
       this.authLogin.value.email?? "",
       this.authLogin.value.password?? ""
-    ))
+    ));
+    return this.user ? this.user : null;
   }
-
   registerf(){
     //id:number,nom:string,email:string,password:string)
-    this.serviceAuth.putInUserList(new Client(
-      this.serviceAuth.getAllUsers().length+1,
+    if(this.serviceAuth.putInUserList(new Client(
+      this.serviceAuth.users.length+1,
       this.authRegister.value.completName?? "",
       this.authRegister.value.email?? "",
       this.authRegister.value.password?? ""
-    ))
+    ))){
+      this.register = false;
+    }
+
   }
 }

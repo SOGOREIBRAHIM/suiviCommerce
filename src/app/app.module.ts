@@ -28,6 +28,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { DetailProduitComponent } from './detail-produit/detail-produit.component';
 import { PanierAchatComponent } from './panier-achat/panier-achat.component';
 import { AuthComponent } from './auth/auth.component';
+import { SuiviCommandesComponent } from './suivi-commandes/suivi-commandes.component';
 
 
 
@@ -38,6 +39,7 @@ import { AuthComponent } from './auth/auth.component';
     AjoutProduitComponent,
     PanierAchatComponent,
     AuthComponent,
+    SuiviCommandesComponent,
     ProduitComponent,
     AccueilComponent,
     NotFoundComponent,

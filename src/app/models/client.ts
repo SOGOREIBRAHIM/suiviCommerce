@@ -2,7 +2,7 @@ export class Client {
     
         private id:number;
         private nomComplet:string;
-        private email:string;
+        public email:string;
         public password:string;
         private commandes:string | undefined; // a lier a la classe commande
       

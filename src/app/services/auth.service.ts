@@ -6,16 +6,19 @@ import { Client } from '../models/client';
 })
 export class AuthService {
   user:Client | undefined;
-  users = localStorage.setItem("users","");
+  users:Client[] = []; //  localStorage.setItem("users","");
+
   constructor() {
 
    }
    getUser():Client | undefined{
     return this.user;
    }
-   getLogin(user:Client){
+   getLogin(user:Client):any{
     var users = localStorage.getItem("users");
-    return user;
+    this.users = JSON.parse(localStorage.getItem("users") ?? "");
+    return this.users.find(user => user.email === user.email && user.password === user.password);
+    
    }
    getAllUsers(){
     if(localStorage.getItem("users") == null){
@@ -23,10 +26,10 @@ export class AuthService {
     }
     return JSON.parse(localStorage.getItem("users") ?? "");
    }
-   putInUserList(user:Client){
-
+   putInUserList(user:Client):boolean{
+      this.users.push(user);
+      localStorage.setItem("users",JSON.stringify(this.users));
+      return true;
    }
-   setUser(user:Client){
-    this.user = user;
-   }
+   
 }

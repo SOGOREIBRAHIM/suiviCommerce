@@ -1,0 +1,42 @@
+<div class="container m-t vh-100">
+     <h3 class="title"><span>Gestion des commandes<i class="fa-solid fa-cart-plus"></i></span></h3>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th scope="col">#</th>
+            <th scope="col">Clients</th>
+			<th scope="col">Désignation</th>
+			<th scope="col">Catégories</th>            
+			<th scope="col">Prix</th>
+            <th scope="col">Quantité</th>
+            <th scope="col">Status</th>
+            <th scope="col">Date</th>
+            <th scope="col">Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let command of commandesList; index as i">
+			<th scope="row">{{ i + 1 }}</th>
+            <th>utilisateur inc</th>
+			<td>
+				<img
+					src="../assets/img/produit/img_{{i+1}}.jpg"
+					class="me-2"
+					style="height: 20px"
+				/>
+				{{ command.produits }}
+			</td>
+			<td>Chaussure</td>
+            <td>20 000 F cfa</td>
+            <td class="qty"></td>
+            <td>Livré</td>
+            <td>10/07/2023</td>
+			<td style="text-align: right;">
+                <a (click)="removeOnCommands($event,i)" class="text-danger"><i class="fa-solid fa-trash-can"></i></a>
+                <!-- <a (click)="removeOnCommands($event,i)" class="text-danger"><i class="fa-solid fa-trash-can"></i></a>
+                <a (click)="removeOnCommands($event,i)" class="text-danger"><i class="fa-solid fa-trash-can"></i></a> -->
+            </td>
+		</tr>
+	</tbody>
+</table>
+</div>

@@ -5,6 +5,7 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { PanierAchatComponent } from './panier-achat/panier-achat.component';
 import { AuthComponent } from './auth/auth.component';
+import { SuiviCommandesComponent } from './suivi-commandes/suivi-commandes.component';
 const routes: Routes = [
 
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'produit', 
     component: ProduitComponent
+  },
+  {
+    path:"commandes",
+    component:SuiviCommandesComponent
   },
 
   {
