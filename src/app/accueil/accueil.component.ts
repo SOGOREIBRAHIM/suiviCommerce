@@ -41,8 +41,13 @@ ouvrirDetail(data:any){
     data,
   })
 }
-addToCart(product:Produit){
-  
+addToCart(p:Produit){
+  console.log(p);
+  this._produitService.setPanier(p);
+
+  this._produitService.updatePanierCount(this._produitService.getPanier().length);
+  //this.count += 1;
+ // this.panierCounter.emit(p);
 }
 ngOnInit(): void {
   this.produits = this._produitService.getAllProduits();

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { Produit } from '../models/produits';
 
 @Injectable({
@@ -8,6 +8,11 @@ import { Produit } from '../models/produits';
 })
 export class ProduitService {
   productList: Produit[] =[];
+  panierList:Produit[] = [];
+ 
+  private panierCountSubject = new Subject<number>();
+
+  panierCount$ = this.panierCountSubject.asObservable();
   constructor(private _http: HttpClient) {
 
    //
@@ -37,6 +42,16 @@ this.productList.push(new Produit(this.productList.length+1,produit.designation,
     localStorage.setItem("produits",JSON.stringify(this.productList));
   }
 
+  getPanier():Produit[]{
+    return this.panierList;
+}
+setPanier(product:Produit){
+  this.panierList.push(product);
+}
+
+updatePanierCount(newCount: number) {
+  this.panierCountSubject.next(newCount);
+}
   getAllProduits():any{
     if(localStorage.getItem("produits") == null){
       return;

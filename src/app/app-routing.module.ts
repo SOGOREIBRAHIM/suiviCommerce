@@ -3,13 +3,22 @@ import { RouterModule, Routes } from '@angular/router';
 import { ProduitComponent } from './produit/produit.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { PanierAchatComponent } from './panier-achat/panier-achat.component';
+import { AuthComponent } from './auth/auth.component';
 const routes: Routes = [
 
   {
     path: '', 
     component: AccueilComponent
   },
-
+  {
+    path:"auth",
+    component:AuthComponent
+  },
+  {
+    path: 'panier', 
+    component: PanierAchatComponent
+  },
   {
     path: 'produit', 
     component: ProduitComponent

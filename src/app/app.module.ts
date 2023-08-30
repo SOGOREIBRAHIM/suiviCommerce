@@ -26,6 +26,9 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { AccueilComponent } from './accueil/accueil.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { DetailProduitComponent } from './detail-produit/detail-produit.component';
+import { PanierAchatComponent } from './panier-achat/panier-achat.component';
+import { AuthComponent } from './auth/auth.component';
+
 
 
 //I keep the new line
@@ -33,6 +36,8 @@ import { DetailProduitComponent } from './detail-produit/detail-produit.componen
   declarations: [
     AppComponent,
     AjoutProduitComponent,
+    PanierAchatComponent,
+    AuthComponent,
     ProduitComponent,
     AccueilComponent,
     NotFoundComponent,
@@ -62,9 +67,6 @@ import { DetailProduitComponent } from './detail-produit/detail-produit.componen
     IgxToggleModule,
     IgxCardModule,
     IgxInputGroupModule
-    
-
-
   ],
   providers: [],
   bootstrap: [AppComponent]

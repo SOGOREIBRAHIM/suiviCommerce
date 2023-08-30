@@ -11,5 +11,17 @@ import {MatTableDataSource, MatTableModule} from '@angular/material/table';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent{
+export class AppComponent implements OnInit{
+  produitService:ProduitService;
+  public panierCounter:number = 0;
+  constructor(produitService:ProduitService){
+    this.produitService = produitService;
+  }
+  ngOnInit(): void {
+    this.produitService.panierCount$.subscribe(newCount => {
+      this.panierCounter = newCount;
+    });
+  }
+
+
 }

@@ -1,6 +1,6 @@
 import { Component,inject } from '@angular/core';
-import { ProduitServiceService } from '../produit-service.service';
-import { Produit } from '../produit';
+import { ProduitService } from '../services/produit.service';
+import { Produit } from '../models/produits';
 
 @Component({
   selector: 'app-panier-achat',
@@ -12,8 +12,7 @@ export class PanierAchatComponent {
   qties:any[] = [];
   panierList:Produit[] = [];
   showModal = false;
-  produitservices: ProduitServiceService = inject(ProduitServiceService);
-
+  produitservices: ProduitService = inject(ProduitService);
   constructor(){
     this.panierList = this.produitservices.getPanier();
   }
