@@ -31,6 +31,7 @@ ouvrirAjouter(){
 }
 
 ouvrirModifier(data: any){
+  console.log(data);
   const dialoRef = this._dialog.open(AjoutProduitComponent,{
     data,
   });

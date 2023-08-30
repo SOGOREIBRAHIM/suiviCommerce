@@ -28,15 +28,15 @@ export class AjoutProduitComponent implements OnInit{
     private _empService: ProduitService,
      private _dialogRef: MatDialogRef<AjoutProduitComponent>, 
     @Inject(MAT_DIALOG_DATA) public data: any){
+      console.log(data);
     this.empForm = this._fb.group({
-      designation: 'ordinateur',
-      prix: '20000',
-      quantite: '2',
-      categorie: 'Electronique',
-      date: '2023-08-23',
-      description: 'ordinateur très bon',
-      photo: new FormControl(""),
-      photoName: ""
+      designation: data ? data.nom : "",
+      prix: data ? data.prix : "",
+      quantite: data ? data.qty : "",
+      categorie: data ? data.categorie : "",
+      date: "",
+      description: data ? data.description : "",
+      photoName: data ? data.imgName : ""
     })
   }
 
@@ -63,17 +63,24 @@ export class AjoutProduitComponent implements OnInit{
 }
 
 onFormSubmit(){
-  // if(this.empForm.valid){
-  //   this._empService.modifierProduit(this.data.id, this.empForm.value)
-  // }else{
-    if(this._empService.ajouterProduit(this.empForm.value)){
+
+   if(this.empForm.valid){
+    if(this.data){ 
+      console.log(this.empForm.value);
+      this._dialogRef.close(true);
+      this._empService.modifierProduit(this.data.id, this.empForm.value)
+    }else{
+     if(this._empService.ajouterProduit(this.empForm.value)){
     
-      alert('Produit ajouter !')
+     // alert('Produit ajouter !')
       this._dialogRef.close(true);
       this._empService.lireProduit();
-    }  
-  //  }
+    } 
+   }
+    
+    
   }
+ }
 }
   // onFormSubmit(){
   //   if(this.empForm.valid){

@@ -10,7 +10,8 @@ export class ProduitService {
   productList: Produit[] =[];
   constructor(private _http: HttpClient) {
 
-    this.productList = this.getAllProduits();
+   //
+   this.productList = this.getAllProduits();
    }
 
   ajouterProduit(produit: any):boolean{
@@ -27,9 +28,11 @@ this.productList.push(new Produit(this.productList.length+1,produit.designation,
   }
 
   modifierProduit(id: number, produit: any){
-  
+    
     this.productList =  JSON.parse(localStorage.getItem("produits") ?? "");
-    this.productList[id] = produit;
+    this.productList[id-1] = new Produit(id,produit.designation,
+      produit.description,produit.quantite,produit.prix,
+        produit.categorie,produit.photoName);
 
     localStorage.setItem("produits",JSON.stringify(this.productList));
   }

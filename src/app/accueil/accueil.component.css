@@ -1,4 +1,13 @@
-
+.conainer img{
+  height: 120px;
+}
+.conainer p{
+  text-overflow: ellipsis;
+  width: 100%;
+  overflow: hidden;
+  height: 20px;
+  white-space: nowrap;
+}
 .img-home{
     margin-left: 200px;
     margin-top: -60px;

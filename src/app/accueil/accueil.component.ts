@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { IgxOverlayService, IgxToggleDirective } from 'igniteui-angular';
 import { DetailProduitComponent } from '../detail-produit/detail-produit.component';
 import { ProduitService } from '../services/produit.service';
+import { Produit } from '../models/produits';
 
 
 @Component({
@@ -35,15 +36,17 @@ export class AccueilComponent implements OnInit {
 
 constructor(private _dialog: MatDialog, private _produitService: ProduitService){}
 
-ouvrirDetail(){
-  this._dialog.open(DetailProduitComponent)
+ouvrirDetail(data:any){
+  this._dialog.open(DetailProduitComponent,{
+    data,
+  })
 }
-
+addToCart(product:Produit){
+  
+}
 ngOnInit(): void {
-  this._produitService.lireProduit().subscribe(produits => {
-    this.produits = produits;
-  });
-
+  this.produits = this._produitService.getAllProduits();
+  console.log(this.produits);
 }
 
 }

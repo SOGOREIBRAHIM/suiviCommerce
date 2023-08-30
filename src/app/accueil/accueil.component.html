@@ -18,7 +18,7 @@
             <div class="col-md-2" id="largeur" *ngFor="let produit of produits">
                 <igx-card class="card">
                     <igx-card-media height="100%"> 
-                        <img src= "../assets/img/2.jpeg" (click)="ouvrirDetail()">
+                        <img src= "../../assets/img/produits/{{produit.imgName}}" (click)="ouvrirDetail(produit)">
                     </igx-card-media>
                     <igx-card-header class="card-header">
                         <h3 igxCardHeaderTitle>{{produit.designation}}</h3>
@@ -29,7 +29,7 @@
                         </p>
                     </igx-card-content>
                     <igx-card-actions>
-                        <button mat-icon-button class="card-icon" aria-label="Example icon-button with share icon">
+                        <button (click)="addToCart(produit)" mat-icon-button class="card-icon" aria-label="Example icon-button with share icon">
                             <mat-icon>shopping_cart</mat-icon>
                         </button> 
                         <button mat-icon-button class="card-icon" aria-label="Example icon-button with share icon" igxEnd>
