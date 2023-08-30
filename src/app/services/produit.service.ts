@@ -8,22 +8,41 @@ import { Produit } from '../models/produits';
 })
 export class ProduitService {
   productList: Produit[] =[];
-  constructor(private _http: HttpClient) { }
+  constructor(private _http: HttpClient) {
 
-  ajouterProduit(produit: any): Observable<any>{
-    //console.log(produit);
-    this.productList.push(new Produit(this.productList.length,produit.designation,produit.description,produit.quantite,produit.prix,
-        produit.categorie,produit.imgName));
-    //produit.
-   // localStorage.setItem("produits",produit);
+    this.productList = this.getAllProduits();
+   }
 
-    return this._http.post('http://localhost:3000/produit', produit);
+  ajouterProduit(produit: any):boolean{
+//(id:number,nom:string,description:string,qty:number,prix:number,categorie:string,imgName:string)
+  console.log(produit);    
+this.productList.push(new Produit(this.productList.length+1,produit.designation,
+      produit.description,produit.quantite,produit.prix,
+        produit.categorie,produit.photoName));
+ console.log(this.productList);
+    //convertir et persister l'objet produit
+    localStorage.setItem("produits",JSON.stringify(this.productList));
+     console.log(localStorage.getItem("produits"));
+     return true;
   }
 
-  modifierProduit(id: number, date: any): Observable<any>{
-    return this._http.put(`http://localhost:3000/produit/${id}`, date);
+  modifierProduit(id: number, produit: any){
+  
+    this.productList =  JSON.parse(localStorage.getItem("produits") ?? "");
+    this.productList[id] = produit;
+
+    localStorage.setItem("produits",JSON.stringify(this.productList));
   }
 
+  getAllProduits():any{
+    if(localStorage.getItem("produits") == null){
+      return;
+    }
+    return JSON.parse(localStorage.getItem("produits") ?? "");
+  }
+  getProduitById(id:number):Produit | undefined{
+    return this.productList.find(product => product.id === id)
+  }
   lireProduit(): Observable<any>{
     return this._http.get('http://localhost:3000/produit');
   }

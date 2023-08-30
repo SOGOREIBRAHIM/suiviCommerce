@@ -49,6 +49,11 @@ ngOnInit(): void {
 }
 
 lireProduitList(){
+
+ this.dataSource =  this._empService.getAllProduits();
+
+ console.log(this.dataSource);
+return
   this._empService.lireProduit().subscribe({
     next: (res) => {
       this.dataSource = new MatTableDataSource(res) 

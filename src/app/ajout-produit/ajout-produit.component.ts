@@ -30,7 +30,7 @@ export class AjoutProduitComponent implements OnInit{
     @Inject(MAT_DIALOG_DATA) public data: any){
     this.empForm = this._fb.group({
       designation: 'ordinateur',
-      prix: 'ordinateur',
+      prix: '20000',
       quantite: '2',
       categorie: 'Electronique',
       date: '2023-08-23',
@@ -61,37 +61,50 @@ export class AjoutProduitComponent implements OnInit{
       };
     }
 }
-  onFormSubmit(){
-    if(this.empForm.valid){
-      if (this.data) {
-        this._empService
-          .modifierProduit(this.data.id, this.empForm.value)
-          .subscribe({
-            next: (val: any) => {
-            alert('Produit modifier !')
-            this._dialogRef.close(true);
-          },
-          error: (err) =>{
-            console.error(err);
-          },
-        });
-      } else {
-       
-        this._empService.ajouterProduit(this.empForm.value).subscribe({
-          next: (val: any) => {
-            alert('Produit ajouter !')
-            this._dialogRef.close(true);
-            this._empService.lireProduit();
-          },
-          error: (err) =>{
-            console.error(err);
-          },
-        });
 
-      }
-    }
+onFormSubmit(){
+  // if(this.empForm.valid){
+  //   this._empService.modifierProduit(this.data.id, this.empForm.value)
+  // }else{
+    if(this._empService.ajouterProduit(this.empForm.value)){
+    
+      alert('Produit ajouter !')
+      this._dialogRef.close(true);
+      this._empService.lireProduit();
+    }  
+  //  }
   }
-
-
-
 }
+  // onFormSubmit(){
+  //   if(this.empForm.valid){
+  //     if (this.data) {
+  //       this._empService
+  //         .modifierProduit(this.data.id, this.empForm.value)
+  //         .subscribe({
+  //           next: (val: any) => {
+  //           alert('Produit modifier !')
+  //           this._dialogRef.close(true);
+  //         },
+  //         error: (err) =>{
+  //           console.error(err);
+  //         },
+  //       });
+  //     } else {
+       
+  //       this._empService.ajouterProduit(this.empForm.value).subscribe({
+  //         next: (val: any) => {
+  //           alert('Produit ajouter !')
+  //           this._dialogRef.close(true);
+  //           this._empService.lireProduit();
+  //         },
+  //         error: (err) =>{
+  //           console.error(err);
+  //         },
+  //       });
+
+  //     }
+  //   }
+  // }
+
+
+
