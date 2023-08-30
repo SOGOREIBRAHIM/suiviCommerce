@@ -16,7 +16,7 @@ export class ProduitService {
   constructor(private _http: HttpClient) {
 
    //
-   this.productList = this.getAllProduits();
+   this.productList = this.getAllProduits() ? this.getAllProduits() : [];
    }
 
   ajouterProduit(produit: any):boolean{
