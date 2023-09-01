@@ -15,6 +15,8 @@ export class SuiviCommandesService {
     // this.listCommand.push(new Commande(5,"azerty","13/08/2023",true));
     // this.listCommand.push(new Commande(6,"Dell Inspiron","13/08/2023",false));
     // this.listCommand.push(new Commande(7,"azerty","13/08/2023",true));
+    this.listCommand = this.getAllCommands();
+    console.log(this.listCommand);
    }
   getAllCommands():Commande[]{
     return this.listCommand;

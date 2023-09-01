@@ -66,6 +66,9 @@ updatePanierCount(newCount: number) {
   }
 
   supprimer(id: number): Observable<any>{
+  
+    this.productList.splice(id-1,1);
+     console.log(id,this.productList); 
     return this._http.delete(`http://localhost:3000/produit/${id}`);
   }
 

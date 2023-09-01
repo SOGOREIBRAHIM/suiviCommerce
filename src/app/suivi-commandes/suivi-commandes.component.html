@@ -15,28 +15,35 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr *ngFor="let command of commandesList; index as i">
+		<ng-container *ngFor="let cmd of commandesList; index as c">
+		<tr  *ngFor="let command of cmd.panier.produits; index as i">
 			<th scope="row">{{ i + 1 }}</th>
-            <th>utilisateur inc</th>
+            <th>{{cmd.client.nomComplet}}</th>
 			<td>
 				<img
-					src="../assets/img/produit/img_{{i+1}}.jpg"
+					src="../assets/img/produits/{{command.imgName}}"
 					class="me-2"
 					style="height: 20px"
 				/>
-				{{ command.produits }}
+				{{ command.nom}}
 			</td>
-			<td>Chaussure</td>
-            <td>20 000 F cfa</td>
-            <td class="qty"></td>
-            <td>Livré</td>
-            <td>10/07/2023</td>
+			<td>{{command.categorie}}</td>
+            <td>{{command.prix}}</td>
+            <td class="qty">{{cmd.panier.quantites[c]}}</td>
+            <td>{{cmd.etat ? "livré" : "En attente"}}</td>
+            <td>{{cmd.dateCommande}}</td>
 			<td style="text-align: right;">
-                <a (click)="removeOnCommands($event,i)" class="text-danger"><i class="fa-solid fa-trash-can"></i></a>
-                <!-- <a (click)="removeOnCommands($event,i)" class="text-danger"><i class="fa-solid fa-trash-can"></i></a>
+				<button mat-icon-button color="primary" (click)="removeOnCommands($event,c)">
+					<mat-icon>delete</mat-icon>
+				</button>
+               <!-- <a (click)="removeOnCommands($event,c)" class="text-danger">
+					<i class="fa-solid fa-trash-can"></i>
+				</a>
+                 <a (click)="removeOnCommands($event,i)" class="text-danger"><i class="fa-solid fa-trash-can"></i></a>
                 <a (click)="removeOnCommands($event,i)" class="text-danger"><i class="fa-solid fa-trash-can"></i></a> -->
             </td>
 		</tr>
+	</ng-container>
 	</tbody>
 </table>
 </div>

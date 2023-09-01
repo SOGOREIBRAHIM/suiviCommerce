@@ -4,6 +4,9 @@ import { IgxOverlayService, IgxToggleDirective } from 'igniteui-angular';
 import { DetailProduitComponent } from '../detail-produit/detail-produit.component';
 import { ProduitService } from '../services/produit.service';
 import { Produit } from '../models/produits';
+import { Router } from '@angular/router';
+import { Client } from '../models/client';
+import { AuthService } from '../services/auth.service';
 
 
 @Component({
@@ -13,8 +16,9 @@ import { Produit } from '../models/produits';
 })
 export class AccueilComponent implements OnInit {
 
+  public router:Router;
   public produits: any[] = [];
-
+  public user:AuthService;
   public slides = [
     {
       src: '../assets/img/Group 32.png'
@@ -34,7 +38,12 @@ export class AccueilComponent implements OnInit {
     
 ];
 
-constructor(private _dialog: MatDialog, private _produitService: ProduitService){}
+constructor(router:Router,private _dialog: MatDialog,
+  private userService:AuthService,
+  private _produitService: ProduitService){
+  this.router = router;
+  this.user = userService;
+}
 
 ouvrirDetail(data:any){
   this._dialog.open(DetailProduitComponent,{
@@ -42,7 +51,11 @@ ouvrirDetail(data:any){
   })
 }
 addToCart(p:Produit){
-  console.log(p);
+
+  if(this.userService.getUser().nomComplet == "inc"){
+     this.router.navigate(['/auth']);
+     return
+  }
   this._produitService.setPanier(p);
 
   this._produitService.updatePanierCount(this._produitService.getPanier().length);

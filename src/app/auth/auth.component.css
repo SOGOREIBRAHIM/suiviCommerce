@@ -39,4 +39,11 @@
 p a{
     color: #20C997;
     text-decoration: none;
+    cursor: pointer;
   }
+
+  .btn-default {
+    margin-top: 5px;
+    color: #fff!important;
+    background-color: #031451!important;
+}

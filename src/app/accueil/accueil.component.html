@@ -31,13 +31,15 @@
                     <igx-card-actions>
                         <button (click)="addToCart(produit)" mat-icon-button class="card-icon" aria-label="Example icon-button with share icon">
                             <mat-icon>shopping_cart</mat-icon>
-                        </button> 
+                        </button>
+                    <ng-container *ngIf="false">                      
                         <button mat-icon-button class="card-icon" aria-label="Example icon-button with share icon" igxEnd>
                             <mat-icon>favorite</mat-icon>
                         </button>
                         <button mat-icon-button class="card-icon" aria-label="Example icon-button with share icon">
                             <mat-icon>shopping_basket</mat-icon>
-                        </button>
+                        </button> 
+                    </ng-container> 
                     </igx-card-actions>
                 </igx-card>
             </div>   

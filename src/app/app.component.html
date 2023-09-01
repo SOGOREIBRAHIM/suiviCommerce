@@ -7,19 +7,27 @@
       <span class="logo-pping">pping</span>
     </a>
     <span class="space"></span>
-    <button routerLink="/panier" class="nav-icon" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <button *ngIf="user && user.userType ==0" routerLink="{{user.nomComplet !== 'inc' ?'/panier' : '/auth'}}"  class="nav-icon" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
       <mat-icon>shopping_cart</mat-icon>
-      <span class="badge">{{panierCounter}}</span>
+      <span *ngIf="panierCounter > 0" class="badge">{{panierCounter}}</span>
     </button>
-    <button routerLink="/auth" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with share icon">
+    <button *ngIf="user.nomComplet !== 'inc'" title="{{user.nomComplet !== 'inc' ? user.nomComplet: '' }}" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>person</mat-icon>
+    </button>
+    <button  *ngIf="user.nomComplet == 'inc'" title="{{user.nomComplet !== 'inc' ? user.nomComplet: '' }}" routerLink="/auth" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with share icon">
       <mat-icon>person_add</mat-icon>
     </button>
+    <ng-container *ngIf="user && user.userType !=0">
     <button mat-raised-button routerLink="/produit" class="menu-btn">
       <span> Gestion Produits</span>
-    </button>
+    </button>&nbsp;&nbsp;
     <button mat-raised-button routerLink="/commandes" class="menu-btn">
       <span>Commandes</span>
     </button>
+  </ng-container>
+  <button (click)="user.nomComplet = 'inc'"  *ngIf="user.nomComplet !== 'inc'" title="Se déconnecter" routerLink="/auth" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with share icon">
+    <mat-icon>power_settings_new</mat-icon>
+  </button>
   </mat-toolbar>
 </header>
 <!-- <img ng-src="~/img/logo.svg" style="height:130px ; width:180px" class="md-card-image" alt="~/Frontend/images/question-circular-button.svg"> -->

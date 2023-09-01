@@ -47,14 +47,14 @@ ouvrirModifier(data: any){
 }
 
 ngOnInit(): void {
+  
   this.lireProduitList();
 }
 
 lireProduitList(){
+console.log(this.dataSource);
+ this.dataSource.data =  this._empService.getAllProduits();
 
- this.dataSource =  this._empService.getAllProduits();
-
- console.log(this.dataSource);
 return
   this._empService.lireProduit().subscribe({
     next: (res) => {
@@ -67,6 +67,10 @@ return
 }
 
 supprimerProduit(id: number){
+  this.dataSource.data.splice(id-1,1);
+  this.dataSource._updateChangeSubscription();
+  console.log(this.dataSource.data,id);
+  return;
   this._empService.supprimer(id).subscribe({
     next: (res) => {
       alert('Produit supprimer !')
