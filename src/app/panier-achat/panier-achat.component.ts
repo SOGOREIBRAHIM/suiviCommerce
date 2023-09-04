@@ -17,6 +17,7 @@ import { Router } from '@angular/router';
 export class PanierAchatComponent {
   user:Client;
   qty:number = 1;
+  prixTotalPanier:number=0;
   qties:any[] = [];
   panierList:Produit[] = [];
   showModal = false;
@@ -41,6 +42,11 @@ export class PanierAchatComponent {
     
   }
 
+  setPanierPrixTotal(prix:number):number{
+    this.prixTotalPanier += prix;
+    console.log(this.prixTotalPanier);
+    return prix;
+  }
   getQuantity(index:number):number{
     if(this.qties[index] == undefined){
         this.qties[index] = this.qty;

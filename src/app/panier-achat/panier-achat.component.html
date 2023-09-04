@@ -45,6 +45,7 @@
 </div>
 <div class="container m-t vh-100">
     <h3 class="title"><span>Panier &nbsp;<i class="fa-solid fa-cart-plus"></i></span><a class="btn btn-primary"  (click)="showModal = true">Valider achat</a></h3>
+	<h6>Panier Total&nbsp;:&nbsp;{{prixTotalPanier}} &nbsp;F&nbsp;CFA</h6>
 <table class="table table-striped">
 	<thead>
 		<tr>
@@ -68,7 +69,7 @@
 				{{ produit.nom }}
 			</td>
 			<td>{{ produit.categorie }}</td>
-            <td>{{ produit.prix | number }}</td>
+            <td>{{ setPanierPrixTotal(produit.prix)}}</td>
             <td class="qty">
 				<i (click)="decreQtyByIndex(i)" class="fa-solid fa-minus">-</i><input type="number" value="{{getQuantity(i)}}">
                             <i (click)="increQtyByIndex(i)" class="fa-solid fa-plus">+</i></td>

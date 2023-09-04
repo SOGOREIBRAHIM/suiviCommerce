@@ -34,7 +34,7 @@ export class AjoutProduitComponent implements OnInit{
       prix: data ? data.prix : "",
       quantite: data ? data.qty : "",
       categorie: data ? data.categorie : "",
-      date: "",
+     // date: "",
       description: data ? data.description : "",
       photoName: data ? data.imgName : ""
     })

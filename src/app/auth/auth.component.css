@@ -47,3 +47,6 @@ p a{
     color: #fff!important;
     background-color: #031451!important;
 }
+.text-error{
+  color: red;
+}

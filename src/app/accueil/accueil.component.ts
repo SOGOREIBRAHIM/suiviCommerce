@@ -7,6 +7,9 @@ import { Produit } from '../models/produits';
 import { Router } from '@angular/router';
 import { Client } from '../models/client';
 import { AuthService } from '../services/auth.service';
+import { Panier } from '../models/panier';
+import { SuiviCommandesService } from '../services/suivi-commandes.service';
+import { Commande } from '../models/commande';
 
 
 @Component({
@@ -19,6 +22,7 @@ export class AccueilComponent implements OnInit {
   public router:Router;
   public produits: any[] = [];
   public user:AuthService;
+  private cmdService:SuiviCommandesService;
   public slides = [
     {
       src: '../assets/img/Group 32.png'
@@ -40,9 +44,11 @@ export class AccueilComponent implements OnInit {
 
 constructor(router:Router,private _dialog: MatDialog,
   private userService:AuthService,
-  private _produitService: ProduitService){
+  private _produitService: ProduitService,
+  cmdService:SuiviCommandesService){
   this.router = router;
   this.user = userService;
+  this.cmdService = cmdService;
 }
 
 ouvrirDetail(data:any){
@@ -65,6 +71,18 @@ addToCart(p:Produit){
 ngOnInit(): void {
   this.produits = this._produitService.getAllProduits();
   console.log(this.produits);
+}
+
+AddCmd(){
+  if(this.userService.getUser().nomComplet == "inc"){
+    this.router.navigate(['/auth']);
+    return
+ }
+  const user = this.userService.getUser();
+    user.contact = user.contact ?? "";
+    user.localisation = user.localisation ?? "";
+  const panier = new Panier(this._produitService.panierList,[1]);
+  this.cmdService.setCommandInList(new Commande(1,user,panier,"30/08/2023",false));
 }
 
 }

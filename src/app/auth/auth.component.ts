@@ -12,6 +12,7 @@ export class AuthComponent {
   router:Router;
   user:Client | undefined;
   register:boolean = false;
+  authErrorMessage:string;
   serviceAuth:AuthService;
   authLogin = new FormGroup({
     email: new FormControl('', [Validators.required,Validators.email]),
@@ -25,6 +26,7 @@ export class AuthComponent {
   constructor(serviceAuth:AuthService,router:Router){
       this.serviceAuth = serviceAuth;
       this.router = router;
+      this.authErrorMessage="";
   }
 
   login():any{
@@ -44,6 +46,8 @@ export class AuthComponent {
    console.log(this.user);
    if(this.user){
     this.router.navigate(['/accueil']);
+   }else{
+    this.authErrorMessage = "L'email et le mot de passe ne correspondent pas ";
    }
     return this.user ? this.user : null;
   }

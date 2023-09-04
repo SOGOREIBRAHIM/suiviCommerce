@@ -4,6 +4,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { AjoutProduitComponent } from '../ajout-produit/ajout-produit.component';
 import { ProduitService } from '../services/produit.service';
+import { DetailProduitComponent } from '../detail-produit/detail-produit.component';
 
 @Component({
   selector: 'app-produit',
@@ -13,13 +14,18 @@ import { ProduitService } from '../services/produit.service';
 export class ProduitComponent implements OnInit{
   title = 'suiviCommande';
   displayedColumnsCmd: string[] = ['id','client', 'categorie', 'designation', 'prix', 'quantite', 'status','date', 'description','action','photo'];
-  displayedColumns: string[] = ['id', 'designation', 'prix', 'quantite', 'categorie', 'date', 'description','action','photo'];
+  displayedColumns: string[] = ['id', 'designation', 'prix', 'quantite', 'categorie','action','photo'];
   dataSource = new MatTableDataSource<any>
 
 @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-constructor(private _dialog: MatDialog, private _empService: ProduitService){}
+constructor( private _empService: ProduitService,private _dialog: MatDialog){}
 
+ouvrirDetail(data:any){
+  this._dialog.open(DetailProduitComponent,{
+    data,
+  })
+}
 ouvrirAjouter(){
   const dialoRef = this._dialog.open(AjoutProduitComponent)
   dialoRef.afterClosed().subscribe({
@@ -52,9 +58,9 @@ ngOnInit(): void {
 }
 
 lireProduitList(){
-console.log(this.dataSource);
- this.dataSource.data =  this._empService.getAllProduits();
 
+ this.dataSource.data =  this._empService.getAllProduits();
+console.log(this.dataSource.data);
 return
   this._empService.lireProduit().subscribe({
     next: (res) => {

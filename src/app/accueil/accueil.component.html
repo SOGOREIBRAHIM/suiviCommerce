@@ -32,11 +32,11 @@
                         <button (click)="addToCart(produit)" mat-icon-button class="card-icon" aria-label="Example icon-button with share icon">
                             <mat-icon>shopping_cart</mat-icon>
                         </button>
-                    <ng-container *ngIf="false">                      
+                    <ng-container *ngIf="true">                      
                         <button mat-icon-button class="card-icon" aria-label="Example icon-button with share icon" igxEnd>
                             <mat-icon>favorite</mat-icon>
                         </button>
-                        <button mat-icon-button class="card-icon" aria-label="Example icon-button with share icon">
+                        <button (click)="AddCmd()" mat-icon-button class="card-icon" aria-label="Example icon-button with share icon">
                             <mat-icon>shopping_basket</mat-icon>
                         </button> 
                     </ng-container> 
