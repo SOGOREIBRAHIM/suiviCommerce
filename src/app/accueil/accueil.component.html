@@ -9,8 +9,18 @@
         </igx-carousel>
     </div>
 
-     <div class="title">
-        <h3> <span classe="nos">Nos</span> articles</h3>
+     <div class="container">
+        <div class="row">
+           <div class="col-md-6">
+            <span class="titre"> Nos articles </span>
+           </div>
+            <div class="col-md-6" id="input">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Rechercher par categorie" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <button type="button" class="btn" id="btn-color"><i class="bi bi-search"></i></button>
+                </div>
+            </div>
+        </div>
      </div>
      
     <div class="conainer">
@@ -21,11 +31,11 @@
                         <img src= "../../assets/img/produits/{{produit.imgName}}" (click)="ouvrirDetail(produit)">
                     </igx-card-media>
                     <igx-card-header class="card-header">
-                        <h3 igxCardHeaderTitle>{{produit.designation}}</h3>
+                        <h3 igxCardHeaderTitle>{{produit.nom}}</h3>
                         <h2 igxCardHeaderSubtitle>{{produit.prix}} f</h2>
                     </igx-card-header>
                     <igx-card-content class="card-content">
-                        <p>{{produit.description}}
+                        <p>{{produit.categorie}}
                         </p>
                     </igx-card-content>
                     <igx-card-actions>
@@ -42,6 +52,15 @@
                     </ng-container> 
                     </igx-card-actions>
                 </igx-card>
+            </div>
+            <div class="col-md-12" id="pagination">
+                <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="#">Precedent</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Suivant</a></li>
+                  </ul>
             </div>   
         </div>
     </div>

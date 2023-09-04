@@ -1,5 +1,68 @@
 
 .container{
+  margin-top: 6px;
+  padding: 50px 50px;
+}
+
+#card{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 20px 60px;
+  width: 500px;
+  height: 580px;
+  margin-right: 80px;
+}
+
+h4{
+  display: flex;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.msg{
+  background: #C6E0FE;
+  margin-top: 20px;
+  /* padding: 5px 5px; */
+  height: 80px;
+}
+
+.msg p{
+  padding: 10px 10px;
+}
+
+.label{
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+button{
+  margin-top: 30px;
+  width: 100%;
+}
+
+#msg-btn{
+  color: #8710D8;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
+
+img{
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+
+
+
+/*
+
+
+.container{
     height: 80vh;
 }
   .modal-custom .body{
@@ -13,6 +76,7 @@
       margin: auto;
       margin-top: 80px;
       padding: 20px;
+      box-shadow: inset;
   }
   
   .modal-custom .modal-container img{
@@ -47,3 +111,8 @@ p a{
     color: #fff!important;
     background-color: #031451!important;
 }
+
+.editable{
+  box-shadow: inset;
+} 
+*/

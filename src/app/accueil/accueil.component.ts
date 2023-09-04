@@ -24,16 +24,16 @@ export class AccueilComponent implements OnInit {
       src: '../assets/img/Group 32.png'
     },
     {
-      src: '../assets/img/1.jpeg'
+      src: '../assets/img/12.png'
     },
     {
-      src: '../assets/img/2.jpeg'
+      src: '../assets/img/13.png'
     },
     {
-      src: '../assets/img/3.jpeg'
+      src: '../assets/img/14.png'
     },
     {
-      src: '../assets/img/4.jpeg'
+      src: '../assets/img/12.png'
     }
     
 ];

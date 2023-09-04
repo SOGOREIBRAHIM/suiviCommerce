@@ -1,5 +1,8 @@
 
 /* header */
+mat-toolbar{
+  
+}
 .space {
     flex: 1 1 auto;
   }
@@ -9,27 +12,27 @@
   } 
 
   .navbar-icon{
-    color: #FFF;
+    color: #8710D8;
     padding-top: 3px;
   }
 
   .logo-s{
     font-size: 60px;
-    color: #FD384F;
+    color: #fff;
     font-family: 'Island Moments', cursive;
     margin-bottom: 10px;
     margin-right: 2px;
   }
 
   .logo-h{
-    color: #FD384F;
+    color: #fff;
     font-weight: 100px;
     margin-right: 2px;
     font-weight: 700;
 }
 
 .logo-pping{
-    color: #FD384F;
+    color: #fff;
     font-weight: 100px;
     margin-right: 25px;
     font-weight: 700;
@@ -37,13 +40,14 @@
 
 .menu-btn:hover
 .menu-btn:focus{
-  background: #3f51b5;
+  background: #8710D8;
   color: #FFF;
 }
 
 /* footer */
 footer{
   background: #000;
+  height: 50%;
   padding-top: 3%;
 }
 
@@ -119,7 +123,7 @@ h4{
 
 #footer-icon:hover
 #footer-icon:focus{
-  color: #FD384F
+  color: #8710D8
 }
 
 .text{
@@ -132,13 +136,13 @@ h4{
 }
 
 #btn-envoi{
-  color: #FD384F;
+  color: #8710D8;
 }
 
 
 .badge {
   color: #fff!important;
-  background-color: RED!important;
+  background-color: #8710D8!important;
   --bs-badge-padding-x: 0.55em;
   --bs-badge-padding-y: 0.25em;
   --bs-badge-font-size: 0.75em;
@@ -147,7 +151,7 @@ h4{
   --bs-badge-border-radius: var(--bs-border-radius);
   display: inline-block;
   padding: var(--bs-badge-padding-y) var(--bs-badge-padding-x);
-  font-size: var(--bs-badge-font-size);
+  font-size: 15px;
   font-weight: var(--bs-badge-font-weight);
   line-height: 1;
   color: var(--bs-badge-color);
@@ -156,6 +160,6 @@ h4{
   vertical-align: baseline;
   border-radius: 50%;
   position: absolute;
-  top: -10px;
+  top: -8px;
   right: -10px;
 }
